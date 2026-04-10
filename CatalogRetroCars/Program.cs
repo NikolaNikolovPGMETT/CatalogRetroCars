@@ -1,5 +1,6 @@
 using CatalogRetroCars.Data;
 using Microsoft.AspNetCore.Identity;
+using CatalogRetroCars.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IRetroCarRepository, InMemoryRetroCarRepository>();
 
 var app = builder.Build();
 

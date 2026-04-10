@@ -1,0 +1,13 @@
+﻿@model CatalogRetroCars.Models.RetroCar
+@{
+    ViewData["Title"] = "Изтриване";
+}
+
+<h1>Изтриване на автомобил</h1>
+<p>Сигурни ли сте, че искате да изтриете <strong>@Model.Brand @Model.Model (@Model.Year)</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Да, изтрий</button>
+    <a asp-action="Index" class="btn btn-secondary">Отказ</a>
+</form>

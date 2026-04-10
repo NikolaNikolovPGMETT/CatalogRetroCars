@@ -1,0 +1,28 @@
+﻿@model CatalogRetroCars.Models.RetroCar
+@{
+    ViewData["Title"] = "Детайли";
+}
+
+<h1>@Model.Brand @Model.Model (@Model.Year)</h1>
+<dl class="row">
+    <dt class="col-sm-3">Марка</dt>
+    <dd class="col-sm-9">@Model.Brand</dd>
+
+    <dt class="col-sm-3">Модел</dt>
+    <dd class="col-sm-9">@Model.Model</dd>
+
+    <dt class="col-sm-3">Година</dt>
+    <dd class="col-sm-9">@Model.Year</dd>
+
+    <dt class="col-sm-3">Държава</dt>
+    <dd class="col-sm-9">@Model.Country</dd>
+
+    <dt class="col-sm-3">Мощност</dt>
+    <dd class="col-sm-9">@Model.HorsePower к.с.</dd>
+
+    <dt class="col-sm-3">Описание</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редакция</a>
+<a asp-action="Index" class="btn btn-secondary">Назад</a>

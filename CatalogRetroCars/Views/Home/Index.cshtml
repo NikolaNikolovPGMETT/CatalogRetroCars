@@ -1,8 +1,26 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Начало";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Каталог за ретро автомобили</h1>
+        <p class="col-md-10 fs-5">
+            Това е учебен проект по технологии и предприемачество/информатика за 12 клас.
+            Демонстрира пълни CRUD операции (Create, Read, Update, Delete) в ASP.NET Core MVC.
+        </p>
+        <a asp-controller="RetroCars" asp-action="Index" class="btn btn-primary btn-lg">Към каталога</a>
+    </div>
 </div>
+
+<section>
+    <h2>Материал за 12 клас: какво учим с този проект</h2>
+    <ul>
+        <li><strong>Create</strong> – създаване на нов автомобил чрез форма с валидация.</li>
+        <li><strong>Read</strong> – преглед на всички записи в табличен вид и детайлен екран.</li>
+        <li><strong>Update</strong> – редактиране на вече въведена информация.</li>
+        <li><strong>Delete</strong> – изтриване на запис с потвърждение.</li>
+        <li>Структура на MVC: <em>Model</em>, <em>View</em>, <em>Controller</em>.</li>
+        <li>Основи на валидирането с Data Annotations.</li>
+    </ul>
+</section>

@@ -1,0 +1,16 @@
+﻿@model CatalogRetroCars.Models.RetroCar
+@{
+    ViewData["Title"] = "Редакция";
+}
+
+<h1>Редакция на автомобил</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <partial name="_CarForm" model="Model" />
+    <button type="submit" class="btn btn-primary">Запази</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

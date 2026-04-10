@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CatalogRetroCars.Models.RetroCar>
+@{
+    ViewData["Title"] = "Каталог";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Каталог ретро автомобили</h1>
+    <a asp-action="Create" class="btn btn-primary">Добави автомобил</a>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Марка</th>
+            <th>Модел</th>
+            <th>Година</th>
+            <th>Държава</th>
+            <th>к.с.</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Country</td>
+                <td>@car.HorsePower</td>
+                <td class="text-nowrap">
+                    <a asp-action="Details" asp-route-id="@car.Id" class="btn btn-sm btn-outline-secondary">Преглед</a>
+                    <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-sm btn-outline-primary">Редакция</a>
+                    <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-sm btn-outline-danger">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
